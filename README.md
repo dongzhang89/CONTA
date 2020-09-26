@@ -2,8 +2,8 @@
 The main code for:
 
 Causal Intervention for Weakly Supervised Semantic Segmentation.
-Dong Zhang, Hanwang Zhang, Jinhui Tang, Xiansheng Hua, and Qianru Sun
-NeurIPS 2020. [[CONTA]](xxx)
+Dong Zhang, Hanwang Zhang, Jinhui Tang, Xiansheng Hua, and Qianru Sun.
+NeurIPS, 2020. [[CONTA]](xxx)
 
 ## Requirements
 
@@ -130,7 +130,7 @@ Classes (VOC) Challenge. *IJCV*, 2010.<br>
 [Project](https://github.com/jiwoon-ahn/irn) /
 [Paper](https://arxiv.org/abs/1904.05044)
 
-## TO DO LIST
+## TO DO
 
 * Training code for MS-COCO
 * Code refactoring
