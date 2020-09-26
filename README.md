@@ -1,8 +1,8 @@
 # Causal Intervention for Weakly Supervised Semantic Segmentation 
 The main code for:
 
-Causal Intervention for Weakly Supervised Semantic Segmentation.
-Dong Zhang, Hanwang Zhang, Jinhui Tang, Xiansheng Hua, and Qianru Sun
+Causal Intervention for Weakly Supervised Semantic Segmentation./
+Dong Zhang, Hanwang Zhang, Jinhui Tang, Xiansheng Hua, and Qianru Sun/
 NeurIPS 2020. [[CONTA]](xxx)
 
 ## Requirements
