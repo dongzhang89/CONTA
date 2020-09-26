@@ -1,7 +1,7 @@
 # Causal Intervention for Weakly Supervised Semantic Segmentation 
 The main code for:
 
-Causal Intervention for Weakly Supervised Semantic Segmentation
+Causal Intervention for Weakly Supervised Semantic Segmentation.
 Dong Zhang, Hanwang Zhang, Jinhui Tang, Xiansheng Hua, and Qianru Sun
 NeurIPS 2020. [[CONTA]](xxx)
 
@@ -19,7 +19,7 @@ NeurIPS 2020. [[CONTA]](xxx)
 pip install -r requirements.txt
 ```
 
-### Download PASCAL VOC 2012 devkit and COCO
+### Download PASCAL VOC 2012 and COCO
 
 * PASCAL VOC 2012 in http://host.robots.ox.ac.uk/pascal/VOC/voc2012/#devkit
 * COCO 2014 in https://cocodataset.org/
@@ -121,15 +121,12 @@ Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connect
 [Code](https://bitbucket.org/aquariusjay/deeplab-public-ver2) / [arXiv
 paper](https://arxiv.org/abs/1606.00915)
 
-2. H. Caesar, J. Uijlings, V. Ferrari. COCO-Stuff: Thing and Stuff Classes in Context. In *CVPR*, 2018.<br>
-[Project](https://github.com/nightrome/cocostuff) / [arXiv paper](https://arxiv.org/abs/1612.03716)
-
-3. M. Everingham, L. Van Gool, C. K. I. Williams, J. Winn, A. Zisserman. The PASCAL Visual Object
+2. M. Everingham, L. Van Gool, C. K. I. Williams, J. Winn, A. Zisserman. The PASCAL Visual Object
 Classes (VOC) Challenge. *IJCV*, 2010.<br>
 [Project](http://host.robots.ox.ac.uk/pascal/VOC) /
 [Paper](http://host.robots.ox.ac.uk/pascal/VOC/pubs/everingham10.pdf)
 
-4. Ahn, Jiwoon and Cho, Sunghyun and Kwak, Suha. Weakly Supervised Learning of Instance Segmentation with Inter-pixel Relations. *CVPR*, 2019.<br>
+3. Ahn, Jiwoon and Cho, Sunghyun and Kwak, Suha. Weakly Supervised Learning of Instance Segmentation with Inter-pixel Relations. *CVPR*, 2019.<br>
 [Project](https://github.com/jiwoon-ahn/irn) /
 [Paper](https://arxiv.org/abs/1904.05044)
 
