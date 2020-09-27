@@ -1,4 +1,5 @@
-# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
+# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
+# from "visual commonsense r-cnn"
 from torch import nn
 import torch.nn.functional as F
 import torch
@@ -8,7 +9,7 @@ class CausalPredictor(nn.Module):
     def __init__(self, cfg, in_channels):
         super(CausalPredictor, self).__init__()
         num_classes = 21
-        self.embedding_size = model_size
+        self.embedding_size = 21
         representation_size = inter_channel
 
         self.causal_score = nn.Linear(2*representation_size, num_classes)

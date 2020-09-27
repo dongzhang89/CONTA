@@ -28,7 +28,7 @@ IMAGE:
         TEST: 513
 
 MODEL:
-    NAME: DeepLabV1_ResNet101
+    NAME: 
     N_BLOCKS: [3, 4, 23, 3]
     ATROUS_RATES:
     INIT_MODEL:

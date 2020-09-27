@@ -26,6 +26,8 @@ pip install -r requirements.txt
 
 ### To generate pseudo_mask:
 
+For pseudo-mask generaction, we follow the method [IRNet](https://arxiv.org/abs/1904.05044).
+
 ```
 cd pseudo_mask & python run_sample.py
 ```
@@ -54,7 +56,7 @@ python main.py crf --config-path configs/voc12.yaml
 ### Common setting:
 
 * Model: DeepLab v2 with ResNet-101 backbone. Dilated rates of ASPP are (6, 12, 18, 24). Output stride is 8 times.
-* GPU: All the GPUs visible to the process are used. Please specify the scope with CUDA_VISIBLE_DEVICES=0,1,2,4.
+* GPU: All the GPUs visible to the process are used. Please specify the scope with CUDA_VISIBLE_DEVICES=0,1,2,3.
 * Multi-scale loss: Loss is defined as a sum of responses from multi-scale inputs (1x, 0.75x, 0.5x) and element-wise max across the scales. The unlabeled class is ignored in the loss computation.
 * Learning rate: Stochastic gradient descent (SGD) is used with momentum of 0.9 and initial learning rate of 2.5e-4. Polynomial learning rate decay is employed; the learning rate is multiplied by ```(1-iter/iter_max)**power``` at every 10 iterations.
 * Monitoring: Moving average loss (average_loss in Caffe) can be monitored in TensorBoard.
@@ -86,7 +88,7 @@ except:
 To process a single image:
 
 ```
-python demo.py single \
+python tools/demo.py single \
     --config-path configs/voc12.yaml \
     --model-path model.pth \
     --image-path image.jpg
@@ -95,7 +97,7 @@ python demo.py single \
 To run on a webcam:
 
 ```
-python demo.py live \
+python tools/demo.py live \
     --config-path configs/voc12.yaml \
     --model-path model.pth
 ```
