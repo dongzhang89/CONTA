@@ -1,4 +1,3 @@
-
 import numpy as np
 import time
 import sys
@@ -45,7 +44,6 @@ class AverageMeter:
             v = self.get(key)
             self.__data[key] = [0.0, 0]
             return v
-
 
 class Timer:
     def __init__(self, starting_msg = None):

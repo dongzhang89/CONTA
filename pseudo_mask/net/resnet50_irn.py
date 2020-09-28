@@ -3,7 +3,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 from net import resnet50
 
-
 class Net(nn.Module):
 
     def __init__(self):

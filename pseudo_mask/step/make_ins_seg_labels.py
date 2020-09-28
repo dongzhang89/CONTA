@@ -7,7 +7,6 @@ from torch.backends import cudnn
 import numpy as np
 import importlib
 import os
-
 import skimage
 import voc12.dataloader
 from misc import torchutils, imutils, pyutils, indexing

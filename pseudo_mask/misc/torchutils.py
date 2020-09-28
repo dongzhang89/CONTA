@@ -1,11 +1,7 @@
-
 import torch
-
 from torch.utils.data import Subset
 import numpy as np
 import math
-
-
 class PolyOptimizer(torch.optim.SGD):
 
     def __init__(self, params, lr, weight_decay, max_step, momentum=0.9):
@@ -16,7 +12,6 @@ class PolyOptimizer(torch.optim.SGD):
         self.momentum = momentum
 
         self.__initial_lr = [group['lr'] for group in self.param_groups]
-
 
     def step(self, closure=None):
 
@@ -31,7 +26,6 @@ class PolyOptimizer(torch.optim.SGD):
         self.global_step += 1
 
 class SGDROptimizer(torch.optim.SGD):
-
     def __init__(self, params, steps_per_epoch, lr=0, weight_decay=0, epoch_start=1, restart_mult=2):
         super().__init__(params, lr, weight_decay)
 

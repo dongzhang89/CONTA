@@ -1,12 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
-#
-
-
 import numpy as np
 import pydensecrf.densecrf as dcrf
 import pydensecrf.utils as utils
-
 
 class DenseCRF(object):
     def __init__(self, iter_max, pos_w, pos_xy_std, bi_w, bi_xy_std, bi_rgb_std):

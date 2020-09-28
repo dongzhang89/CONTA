@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-
 import random
 
 import cv2
@@ -9,12 +8,10 @@ import torch
 from PIL import Image
 from torch.utils import data
 
-
 class _BaseDataset(data.Dataset):
     """
     Base dataset class
     """
-
     def __init__(
         self,
         root,

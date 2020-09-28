@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-#
-
 from __future__ import absolute_import, print_function
 
 from collections import OrderedDict
@@ -11,8 +9,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from .resnet import _ConvBnReLU, _ResLayer, _Stem
-
-
 class _ImagePool(nn.Module):
     def __init__(self, in_ch, out_ch):
         super().__init__()

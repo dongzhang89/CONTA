@@ -3,7 +3,6 @@ import numpy as np
 import torch.nn as nn
 import torch.nn.functional as F
 
-
 def cross_entropy2d(input, target, weight=None, size_average=True, pad=False):
     n, c, h, w = input.size()
     nt, ht, wt = target.size()

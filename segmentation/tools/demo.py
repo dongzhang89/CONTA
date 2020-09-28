@@ -72,7 +72,6 @@ def preprocessing(image, device, CONFIG):
 
     return image, raw_image
 
-
 def inference(model, image, raw_image=None, postprocessor=None):
     _, _, H, W = image.shape
 
@@ -97,7 +96,6 @@ def main(ctx):
     """
     Demo with a trained model
     """
-
     print("Mode:", ctx.invoked_subcommand)
 
 

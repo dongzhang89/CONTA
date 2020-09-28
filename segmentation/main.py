@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-#
-
 from __future__ import absolute_import, division, print_function
 
 import json
@@ -65,12 +63,6 @@ def get_params(model, key):
 
 
 def resize_labels(labels, size):
-    """
-    Downsample labels for 0.5x and 0.75x logits by nearest interpolation.
-    Other nearest methods result in misaligned labels.
-    -> F.interpolate(labels, shape, mode='nearest')
-    -> cv2.resize(labels, shape, interpolation=cv2.INTER_NEAREST)
-    """
     new_labels = []
     for label in labels:
         label = label.float().numpy()
@@ -83,9 +75,6 @@ def resize_labels(labels, size):
 @click.group()
 @click.pass_context
 def main(ctx):
-    """
-    Training and evaluation
-    """
     print("Mode:", ctx.invoked_subcommand)
 
 
@@ -101,10 +90,6 @@ def main(ctx):
     "--cuda/--cpu", default=True, help="Enable CUDA if available [default: --cuda]"
 )
 def train(config_path, cuda):
-    """
-    Training DeepLab by v2 protocol
-    """
-
     # Configuration
     CONFIG = OmegaConf.load(config_path)
     device = get_device(cuda)
@@ -200,7 +185,6 @@ def train(config_path, cuda):
     makedirs(checkpoint_dir)
     print("Checkpoint dst:", checkpoint_dir)
 
-    # Freeze the batch norm pre-trained on COCO
     model.train()
     model.module.base.freeze_bn()
 
@@ -299,9 +283,6 @@ def train(config_path, cuda):
     "--cuda/--cpu", default=True, help="Enable CUDA if available [default: --cuda]"
 )
 def test(config_path, model_path, cuda):
-    """
-    Evaluation on validation set
-    """
 
     # Configuration
     CONFIG = OmegaConf.load(config_path)
@@ -408,9 +389,6 @@ def test(config_path, model_path, cuda):
     help="Number of parallel jobs",
 )
 def crf(config_path, n_jobs):
-    """
-    CRF post-processing on pre-computed logits
-    """
 
     # Configuration
     CONFIG = OmegaConf.load(config_path)

@@ -2,7 +2,6 @@ import torch
 import torch.nn.functional as F
 import numpy as np
 
-
 class PathIndex:
 
     def __init__(self, radius, default_size):

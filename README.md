@@ -7,7 +7,7 @@ NeurIPS, 2020. [[CONTA]](xxx)
 
 ## Requirements
 
-* Python 3.6, pytorch 1.2.0, torchvision 0.4.0, and more in requirements.txt
+* PyTorch 1.2.0, torchvision 0.4.0, and more in requirements.txt
 * PASCAL VOC 2012 devkit and COCO 2014
 * 8 NVIDIA GPUs with more than 1024MB of memory
 
@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 ### To generate pseudo_mask:
 
-For pseudo-mask generaction, we follow the method [IRNet](https://arxiv.org/abs/1904.05044).
+For pseudo-mask generaction, we follow the method [IRNet](https://arxiv.org/abs/1904.05044) without the instance-wise CAM generation step.
 
 ```
 cd pseudo_mask & python run_sample.py
@@ -61,6 +61,7 @@ python main.py crf --config-path configs/voc12.yaml
 * Learning rate: Stochastic gradient descent (SGD) is used with momentum of 0.9 and initial learning rate of 2.5e-4. Polynomial learning rate decay is employed; the learning rate is multiplied by ```(1-iter/iter_max)**power``` at every 10 iterations.
 * Monitoring: Moving average loss (average_loss in Caffe) can be monitored in TensorBoard.
 * Preprocessing: Input images are randomly re-scaled by factors ranging from 0.5 to 1.5, padded if needed, and randomly cropped to 321x321.
+* You can find more useful tools in /tools/xxx.
 
 
 ### Training batch normalization
@@ -120,8 +121,8 @@ year = 2020
 Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs. *IEEE TPAMI*,
 2018.<br>
 [Project](http://liangchiehchen.com/projects/DeepLab.html) /
-[Code](https://bitbucket.org/aquariusjay/deeplab-public-ver2) / [arXiv
-paper](https://arxiv.org/abs/1606.00915)
+[Code](https://bitbucket.org/aquariusjay/deeplab-public-ver2) / 
+[Paper](https://arxiv.org/abs/1606.00915)
 
 2. M. Everingham, L. Van Gool, C. K. I. Williams, J. Winn, A. Zisserman. The PASCAL Visual Object
 Classes (VOC) Challenge. *IJCV*, 2010.<br>
@@ -136,7 +137,7 @@ Classes (VOC) Challenge. *IJCV*, 2010.<br>
 
 * Training code for MS-COCO
 * Code refactoring
-* Release checkpoint
+* Release the checkpoint
 
 ## Questions
 

@@ -2,11 +2,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.utils.model_zoo as model_zoo
 
-
 model_urls = {
     'resnet50': 'https://download.pytorch.org/models/resnet50-19c8e357.pth'
 }
-
 
 class FixedBatchNorm(nn.BatchNorm2d):
     def forward(self, input):

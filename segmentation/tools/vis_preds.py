@@ -6,10 +6,9 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 main_dir = sys.argv[1]
-plt.figure(1); plt.figure(2); # Img overlay Gt, Pred
-plt.figure(3);plt.figure(4); # Heatmaps
-plt.figure(5); # Sprt Img overlay GT
-plt.ion()
+plt.figure(1); plt.figure(2); 
+plt.figure(3);plt.figure(4); 
+plt.figure(5);
 plt.show()
 
 def PIL2array(img):
@@ -64,4 +63,3 @@ for f in sorted(os.listdir(main_dir+'gt/')):
 
     plt.draw()
     plt.waitforbuttonpress(0)
-

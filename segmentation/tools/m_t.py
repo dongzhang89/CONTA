@@ -1,5 +1,7 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
-# from "visual commonsense r-cnn"
+# We follow the method of "visual commonsense r-cnn" 
+# https://github.com/Wangt-CN/VC-R-CNN
+
 from torch import nn
 import torch.nn.functional as F
 import torch
@@ -37,7 +39,6 @@ class CausalPredictor(nn.Module):
         xzs = [self.z_dic(feature_pre_obj, dic_z, prior) for feature_pre_obj in feature_split]
 
         causal_logits_list = [self.causal_score(xz) for xz in xzs]
-
 
         return causal_logits_list
         

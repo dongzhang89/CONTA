@@ -6,7 +6,7 @@ DATASET:
     NAME: coco
     ROOT:
     LABELS: ./data/datasets/coco/labels.txt
-    N_CLASSES: 91
+    N_CLASSES: 
     IGNORE_LABEL:
     SCALES:
     SPLIT:

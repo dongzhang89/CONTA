@@ -36,6 +36,7 @@ class _MultiHeadAttention(nn.Module):
         context = context.transpose(1, 2).contiguous().view(b_size, -1, self.n_heads * self.d_v)
         # return the context and attention weights
         return context, attn
+
 # ------------------------------------------------------------------------------
 class MultiHeadAttention(nn.Module):
     def __init__(self, d_k, d_v, d_model, n_heads, dropout):

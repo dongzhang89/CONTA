@@ -15,7 +15,6 @@ def compute_weight(embeddings, nclasses, labels, original_weight, alpha, new_cla
 
     imp_weight = embeddings.mean(0).squeeze()
 
-    # Add imprinted weights for -ve samples that occurred in support image
     for c in range(nclasses):
         if label_exist(labels, c) or c==0:
             temp = original_weight[c, ...].squeeze()
@@ -23,7 +22,6 @@ def compute_weight(embeddings, nclasses, labels, original_weight, alpha, new_cla
             temp = temp / temp.norm(p=2)
             original_weight[c, ...] = temp.unsqueeze(1).unsqueeze(1)
 
-    # Add imprinted weights for + sample (last class)
     if new_class:
         imp_weight[-1] = imp_weight[-1] / (imp_weight[-1].norm(p=2) + 1.0e-10)
         imp_weight = imp_weight[-1].unsqueeze(0).unsqueeze(2).unsqueeze(3)
@@ -32,7 +30,6 @@ def compute_weight(embeddings, nclasses, labels, original_weight, alpha, new_cla
         weight = original_weight
 
     return weight
-
 
 def masked_embeddings(fmap_shape, label, fconv_norm, n_classes):
     label = label.unsqueeze(0).unsqueeze(0)
@@ -513,10 +510,6 @@ class FRRU(nn.Module):
 
 
 class RU(nn.Module):
-    """
-    Residual Unit for FRRN
-    """
-
     def __init__(self,
                  channels,
                  kernel_size=3,
@@ -945,4 +938,3 @@ def get_upsampling_weight(in_channels, out_channels, kernel_size):
                       dtype=np.float64)
     weight[range(in_channels), range(out_channels), :, :] = filt
     return torch.from_numpy(weight).float()
-

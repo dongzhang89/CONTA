@@ -1,5 +1,4 @@
 import functools
-
 import torch.nn as nn
 import torch.nn.functional as F
 import torch
@@ -12,10 +11,7 @@ from skimage.morphology import thin
 from scipy import ndimage
 import copy
 import numpy as np
-from utils import freeze_weights, \
-                                  masked_embeddings, \
-                                  weighted_masked_embeddings, \
-                                  compute_weight
+from utils import freeze_weights, masked_embeddings, weighted_masked_embeddings, compute_weight
 
 # FCN 8s
 class dilated_fcn8s(fcn8s):

@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-#
-
 from __future__ import absolute_import, print_function
 
 import torch
@@ -9,7 +7,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from .resnet import _ConvBnReLU, _ResLayer, _Stem
-
 
 class _ASPP(nn.Module):
     """
@@ -37,7 +34,6 @@ class DeepLabV2(nn.Sequential):
     DeepLab v2: Dilated ResNet + ASPP
     Output stride is fixed at 8
     """
-
     def __init__(self, n_classes, n_blocks, atrous_rates):
         super(DeepLabV2, self).__init__()
         ch = [64 * 2 ** p for p in range(6)]

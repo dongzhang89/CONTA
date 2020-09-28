@@ -31,7 +31,7 @@ MODEL:
     NAME: DeepLabV2_ResNet101_MSC
     N_BLOCKS: [3, 4, 23, 3]
     ATROUS_RATES: [6, 12, 18, 24]
-    INIT_MODEL:
+    INIT_MODEL: imagenet_pre_trained_model
 
 SOLVER:
     BATCH_SIZE:
