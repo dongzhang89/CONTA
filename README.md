@@ -9,7 +9,7 @@ NeurIPS, 2020. [[CONTA]](https://arxiv.org/abs/2009.12547)
 
 * PyTorch 1.2.0, torchvision 0.4.0, and more in requirements.txt
 * PASCAL VOC 2012 devkit and COCO 2014
-* 8 NVIDIA GPUs with more than 1024MB of memory
+* 8 NVIDIA GPUs, and each has more than 1024MB of memory
 
 ## Usage
 
@@ -26,15 +26,15 @@ pip install -r requirements.txt
 
 ### To generate pseudo_mask:
 
-For pseudo-mask generaction, we follow the method [IRNet](https://arxiv.org/abs/1904.05044) without the instance-wise CAM generation step.
+For pseudo-mask generaction, we follow the method in [IRNet](https://arxiv.org/abs/1904.05044) without the instance-wise step.
 
 ```
 cd pseudo_mask & python run_sample.py
 ```
 * You can either mannually edit the file, or specify commandline arguments.
-* Replace the ground_truth annotation in PASCAL VOC 2012 with the generated pseudo_mask.
+* Remember to replace the ground_truth annotation in PASCAL VOC 2012 with the generated pseudo_mask.
 
-### To train segmentation model:
+### To train the supervised semantic segmentation model:
 
 ```
 cd segmentation & python main.py train --config-path configs/voc12.yaml
@@ -133,7 +133,7 @@ Classes (VOC) Challenge. *IJCV*, 2010.<br>
 [Project](https://github.com/jiwoon-ahn/irn) /
 [Paper](https://arxiv.org/abs/1904.05044)
 
-## TO DO
+## TO DO LIST
 
 * Training code for MS-COCO
 * Code refactoring

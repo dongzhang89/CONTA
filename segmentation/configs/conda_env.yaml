@@ -1,0 +1,20 @@
+name: deeplab-pytorch
+dependencies:
+  - click
+  - conda-forge::pydensecrf
+  - cudatoolkit=10.2
+  - matplotlib
+  - python=3.6
+  - pytorch::pytorch>1.2.0
+  - pytorch::torchvision
+  - pyyaml
+  - scipy
+  - tqdm
+  - pip:
+    - addict
+    - black
+    - joblib
+    - omegaconf
+    - opencv-python
+    - tensorflow
+    - torchnet
